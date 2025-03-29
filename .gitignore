@@ -1,5 +1,5 @@
-./*.o
-./*.d
-./test_file.txt
-./tokenizer
-./.ninja_log
+*.o
+*.d
+test_file.txt
+tokenizer
+.ninja_log
