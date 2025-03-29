@@ -1,0 +1,15 @@
+cflags = -Wall
+
+rule cc
+  depfile = $out.d
+  command = g++ -MD -MF $out.d $cflags -c $in -o $out 
+
+rule link
+  command = g++ $in -o $out
+
+rule clean
+  command = rm -f *.o *.d
+
+build tokenizer.o : cc tokenizer.cc
+build tokenizer : link tokenizer.o || tokenizer.o
+build clean : clean
